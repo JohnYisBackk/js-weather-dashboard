@@ -1,0 +1,281 @@
+:root {
+  --bg: #06111f;
+  --panel: rgba(255, 255, 255, 0.08);
+  --panel-strong: rgba(255, 255, 255, 0.13);
+  --line: rgba(255, 255, 255, 0.14);
+
+  --text: #f8fafc;
+  --muted: #9fb3c8;
+
+  --blue: #38bdf8;
+  --cyan: #22d3ee;
+  --violet: #8b5cf6;
+  --yellow: #facc15;
+  --green: #34d399;
+  --red: #fb7185;
+
+  --radius-lg: 34px;
+  --radius-md: 22px;
+  --radius-sm: 16px;
+
+  --shadow: 0 30px 120px rgba(0, 0, 0, 0.45);
+  --transition: 220ms ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(56, 189, 248, 0.24),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 90% 12%,
+      rgba(139, 92, 246, 0.2),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 65% 85%,
+      rgba(34, 211, 238, 0.13),
+      transparent 36%
+    ),
+    linear-gradient(135deg, #06111f, #0f172a 55%, #111827);
+  padding: 25px;
+  color: var(--text);
+  min-height: 100vh;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 420px;
+  background:
+    linear-gradient(135deg, rgba(56, 189, 248, 0.14), transparent),
+    rgba(255, 255, 255, 0.055);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-lg);
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(18px);
+  gap: 34px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  inset: 18px;
+  position: absolute;
+  border-radius: 28px;
+  pointer-events: none;
+}
+
+.hero-content,
+.search-form {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: inline-flex;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  margin-bottom: 16px;
+  font-size: 0.78em;
+}
+
+.hero h1 {
+  max-width: 780px;
+  font-size: clamp(3rem, 7vw, 6.4rem);
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+  margin-bottom: 22px;
+}
+
+.hero p {
+  max-width: 550px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.search-form {
+  width: min(720px, 100%);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.32);
+  border-radius: 25px;
+  border: 1px solid var(--line);
+}
+
+.search-form input {
+  padding: 16px 14px;
+  border-radius: 15px;
+  background: transparent;
+  color: var(--text);
+  font-size: 1em;
+}
+
+.search-form input::placeholder {
+  color: rgba(159, 179, 200, 0.7);
+}
+
+.search-form button {
+  padding: 0 24px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  color: #06111f;
+  font-weight: 950;
+  transition:
+    transform var(--transition),
+    opacity var(--transition);
+}
+
+.search-form button:hover {
+  transform: translateY(-2px);
+}
+
+.search-form button:disabled {
+  opacity: 0.55;
+  transform: none;
+  cursor: not-allowed;
+}
+
+.loading,
+.error {
+  margin-top: 22px;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 850;
+  border: 1px solid var(--line);
+}
+
+.loading {
+  color: var(--yellow);
+  background: rgba(250, 204, 21, 0.13);
+}
+
+.error {
+  color: #fecdd3;
+  background: rgba(251, 113, 133, 0.14);
+}
+
+.weather-grid {
+  margin-top: 22px;
+  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.weather-card {
+  min-height: 170px;
+  padding: 25px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent),
+    rgba(255, 255, 255, 0.055);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(18px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.42);
+  background:
+    linear-gradient(135deg, rgba(56, 189, 248, 0.12), transparent),
+    rgba(255, 255, 255, 0.075);
+}
+
+.weather-card span {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.weather-card strong {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.06em;
+  font-weight: 950;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .weather-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 14px;
+  }
+
+  .hero {
+    padding: 30px;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .search-form button {
+    min-height: 52px;
+  }
+
+  .weather-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .weather-card {
+    min-height: 150px;
+  }
+}

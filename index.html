@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Weather Dashboard PRO</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">Weather Dashboard</span>
+
+          <h1>Weather Dashboard PRO</h1>
+          <p>
+            Search any city and get detailed weather data including temperature,
+            humidity, wind speed, pressure and more.
+          </p>
+        </div>
+
+        <form id="searchForm" class="search-form">
+          <input type="text" id="cityInput" placeholder="Search city..." />
+
+          <button id="searchBtn">Search</button>
+        </form>
+      </section>
+
+      <div id="loading" class="loading hidden">Loading weather...</div>
+
+      <div id="errorMessage" class="error hidden">
+        Failed to load weather data.
+      </div>
+
+      <section id="weatherGrid" class="weather-grid">
+        <article class="weather-card">
+          <span>Temerature</span>
+          <strong id="temperature">--</strong>
+        </article>
+
+        <article class="weather-card">
+          <span>Feels Like</span>
+          <strong id="feelsLike">--</strong>
+        </article>
+
+        <article class="weather-card">
+          <span>Humidity</span>
+          <strong id="humidity">--</strong>
+        </article>
+
+        <article class="weather-card">
+          <span>Wind Speed</span>
+          <strong id="windSpeed">--</strong>
+        </article>
+
+        <article class="weather-card">
+          <span>Pressure</span>
+          <strong id="pressure">--</strong>
+        </article>
+
+        <article class="weather-card">
+          <span>Condition</span>
+          <strong id="condition">--</strong>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
