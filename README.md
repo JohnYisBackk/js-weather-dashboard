@@ -6,7 +6,7 @@ Users can search for any city and instantly get real-time weather information in
 
 ## 🚀 Live Demo
 
-🔗 Live Demo: 
+🔗 Live Demo: https://johnyisbackk.github.io/js-weather-dashboard/
 
 ## ✨ Features
 
